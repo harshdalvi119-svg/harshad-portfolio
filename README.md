@@ -14,7 +14,7 @@ I am a passionate developer interested in:
 - AWS (EC2, S3, RDS)
 - HTML, CSS, JavaScript
 
-## 📂 Projects
+### 📂 Projects
 
 ### 🔹 1. Online Bookstore Platform
 - Built using: Python, AWS
