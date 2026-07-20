@@ -121,13 +121,37 @@ function openCert(id) {
   const c = CERTIFICATIONS.find(x => x.id === id);
   if (!c) return;
 
+  const dateSection = (c.issueDate || c.expirationDate) ? `
+    <div class="detail-block">
+      <h3>Dates</h3>
+      ${c.issueDate ? `<p><strong>Issued:</strong> ${c.issueDate}</p>` : ''}
+      ${c.expirationDate ? `<p><strong>Expires:</strong> ${c.expirationDate}</p>` : ''}
+    </div>
+  ` : '';
+
+  const validationSection = c.validateUrl ? `
+    <div class="detail-block">
+      <h3>Validation</h3>
+      <p><strong>Certificate ID:</strong> ${c.validationNumber}</p>
+      <p><a href="${c.validateUrl}" target="_blank" rel="noreferrer">Verify this certification</a></p>
+    </div>
+  ` : '';
+
+  const imageSection = c.image ? `
+    <div class="detail-block cert-image-block">
+      <img src="${c.image}" alt="${c.name} certificate" class="cert-detail-image">
+    </div>
+  ` : '';
+
   detailBody.innerHTML = `
     <div class="detail-eyebrow">Certification</div>
     <h2 class="detail-title">${c.icon} &nbsp;${c.name}</h2>
+    ${imageSection}
     <div class="detail-block">
       <h3>Issuer</h3>
       <p>${c.issuer}</p>
     </div>
+    ${dateSection}
     <div class="detail-block">
       <h3>About this Certification</h3>
       <p>${c.description}</p>
@@ -138,6 +162,7 @@ function openCert(id) {
         ${c.covers.map(x => `<li>${x}</li>`).join('')}
       </ul>
     </div>
+    ${validationSection}
     <div class="detail-block detail-outcome">
       <h3>Relevance to My Work</h3>
       <p>${c.relevance}</p>

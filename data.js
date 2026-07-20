@@ -169,6 +169,25 @@ const CERTIFICATIONS = [
     relevance: "The foundation for every ML and data project in this portfolio — from the brain tumor CNN pipeline to the churn prediction model."
   },
   {
+    id: "aws-ccp",
+    icon: "☁",
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    description: "Foundational AWS certification validating overall understanding of the AWS Cloud, its core services, security, architecture, pricing, and support model.",
+    image: "images/Certification.png",
+    covers: [
+      "Core AWS services across compute, storage, networking, and databases",
+      "Cloud security and the AWS shared responsibility model",
+      "AWS pricing, billing, and cost-management fundamentals",
+      "Cloud architecture best practices and the AWS Well-Architected Framework"
+    ],
+    relevance: "Backs up the AWS listed under Cloud & DevOps skills and supports deploying data science apps (like the brain tumor detection tool) to the cloud.",
+    issueDate: "May 18, 2026",
+    expirationDate: "May 18, 2029",
+    validationNumber: "ba765377105b486b96d63034cca899b0",
+    validateUrl: "https://aws.amazon.com/verification"
+  },
+  {
     id: "hackathon",
     icon: "⚡",
     name: "Embedded Innovators Hackathon",
