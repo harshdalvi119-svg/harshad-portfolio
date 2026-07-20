@@ -160,8 +160,7 @@ const CERTIFICATIONS = [
   expirationDate: "May 18, 2029",
   validationNumber: "ba765377105b486b96d63034cca899b0",
   validateUrl: "https://aws.amazon.com/verification"
-}
-
+},
    
   {
     id: "mysql-cert",
