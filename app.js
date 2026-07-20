@@ -203,6 +203,38 @@ function animCursor() {
 }
 animCursor();
 
+/* ---------- HERO TYPING EFFECT ---------- */
+function initHeroTyping() {
+  const typingEl = document.querySelector('.typing-text');
+  if (!typingEl) return;
+
+  const phrases = ['Electronics Engineer', 'AI & Machine Learning Engineer'];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeLoop() {
+    const current = phrases[phraseIndex];
+    typingEl.textContent = current.slice(0, charIndex);
+
+    if (!isDeleting && charIndex < current.length) {
+      charIndex++;
+      setTimeout(typeLoop, 70);
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeLoop, 45);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+      setTimeout(typeLoop, 1200);
+    }
+  }
+
+  typeLoop();
+}
+
 /* Scroll reveal (re-run whenever new cards are rendered) */
 function initReveal() {
   const reveals = document.querySelectorAll('.reveal:not(.visible)');
@@ -217,3 +249,4 @@ function initReveal() {
   reveals.forEach(el => observer.observe(el));
 }
 initReveal();
+initHeroTyping();
