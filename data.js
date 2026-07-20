@@ -153,7 +153,7 @@ const CERTIFICATIONS = [
     "Cloud architecture best practices and the AWS Well-Architected Framework"
   ],
      gallery: [
-      { src: "" }
+      { src: "images/Screenshot 2026-07-20 134500.png" }
     ],
   relevance: "Backs up the AWS listed under Cloud & DevOps skills and supports deploying data science apps (like the brain tumor detection tool) to the cloud.",
   issueDate: "May 18, 2026",
